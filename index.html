@@ -1,23 +1,30 @@
 ---
-layout: default
+layout: landing
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div id="background">
+  <div id="sign-wrapper">
+    <div id="sign"></div>
+  </div>
+  <div id="road-wrapper"> 
+    <div id="road">
+      <div id="car">
+        <img id="car-chasis" src="/img/car1 no wheels.png">
+        <img class="car-wheels" src="/img/car1 wheel.png">
+        <img class="car-wheels" src="/img/car1 wheel.png">
+        </div>
+      
+      <div id="van">
+        <img id="van-chasis" src="/img/van1 no wheels.png">
+        <img class="van-wheels" src="/img/towtruck-wheel 32px.png">
+        <img class="van-wheels" src="/img/towtruck-wheel 32px.png">
+      </div>
+      <div id="truck">
+         <img id="truck-chasis" src="/img/Towtruck body w bed.png">
+        <img class="truck-wheels" src="/img/towtruck-wheel 32px.png">
+        <img class="truck-wheels" src="/img/towtruck-wheel 32px.png">
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
