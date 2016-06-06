@@ -485,3 +485,34 @@ $animations-duration: 15s;
         }
 }
 
+.navbar-menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    max-width:1200px;
+    margin: 0 auto;
+}
+.navbar-menu a{
+    padding:10px;
+    color: $text-color;
+    text-decoration:none;
+}
+
+.navbar-logo-wrap{
+    flex-grow:1;
+    display:flex;
+}
+.navbar-item-wrap{
+    flex-grow:1;
+    display:flex;
+}
+
+.navbar-logo{
+
+}
+.navbar-item{
+flex-grow:0;
+}
