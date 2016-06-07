@@ -1,0 +1,98 @@
+---
+layout: master
+title: Techinė Pagalba Kelyje
+---
+<section class="master-layout">
+    <div id="road">
+      <div id="car">
+        <img id="car-chasis" src="/img/car1 no wheels.png">
+        <img class="car-wheels png" src="/img/car1 wheel.png">
+        <img class="car-wheels png" src="/img/car1 wheel.png">
+      </div>
+      <div id="truck">
+        <img id="truck-chasis" src="/img/Towtruck body w bed.png">
+        <img class="truck-wheels" src="/img/towtruck-wheel-gif.gif">
+        <img class="truck-wheels" src="/img/towtruck-wheel-gif.gif">
+        <img class="truck-lights" src="/img/towtruck lights.png">
+      </div>
+
+    </div>
+</section>
+<section class="container-fluid">
+    <div class="container content-card-wrapper">
+    <div><h1>Techninė Pagalba Kelyje</h1></div>
+    <div class="col-lg-6 card"> 
+        <h3>Išvkietimas Telefonu</h3>
+        <p><b>+370 608 51117</b></p>
+        <p>*Kaina priklausys nuo atsumo nuo mūsų aištelės ir jūsų automobilio kelionės tikslo</p>
+    </div>
+    <div class="col-lg-6 card"> 
+        <h3>Tralo aikštelė</h3>
+        <div id='techninepagalbakelyje'></div>
+    </div>
+</div>
+</section>
+<section class="container">
+    <div class="col-lg-12">
+        <h1 class="section-header">Papildomos paslaugos</h1>
+    </div>
+    <div class="col-xs-4 col-xs-offset-4 card">
+        <ul>
+        <li>Gabename automobilius po visą Lietuvą</li>
+        <li>Vežame nestandartinius krovinius</li>
+        </ul>
+    </div>
+</section>
+<script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
+<script> 
+    google.maps.event.addDomListener(window, 'load', init);
+    var map;
+    function init() {
+        var mapOptions = {
+            center: new google.maps.LatLng(54.636492,23.169936),
+            zoom: 9,
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.DEFAULT,
+            },
+            disableDoubleClickZoom: true,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            },
+            scaleControl: true,
+            scrollwheel: true,
+            panControl: true,
+            streetViewControl: true,
+            draggable : true,
+            overviewMapControl: true,
+            overviewMapControlOptions: {
+                opened: false,
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+        }
+        var mapElement = document.getElementById('techninepagalbakelyje');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var locations = [
+['Arneva', 'undefined', 'undefined', 'undefined', 'undefined', 54.65098664338442, 23.024700211639356, 'https://mapbuildr.com/assets/img/markers/default.png']
+        ];
+        for (i = 0; i < locations.length; i++) {
+			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+			if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+			if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+            marker = new google.maps.Marker({
+                icon: markericon,
+                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                map: map,
+                title: locations[i][0],
+                desc: description,
+                tel: telephone,
+                email: email,
+                web: web
+            });
+link = '';     }
+
+}
+</script>

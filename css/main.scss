@@ -15,6 +15,7 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $text-color:       #111;
+$text-hover-color: #BC2026;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
@@ -57,7 +58,7 @@ $animations-duration: 15s;
 #road{
     background: url("/img/bk rep.png") repeat-x;
     position: absolute;
-    background-size: auto 100%;
+    background-size: auto 93.5%;
     bottom: 12.5vh;
     height: calc(25vh + 25vw);
     max-height: calc(100vh - (5vh * 2.5));
@@ -329,6 +330,10 @@ $animations-duration: 15s;
   }
 }
 
+@keyframes animatedBackground {
+	to { background-position: calc((540px * 0.935) * 0.74) 0%; }
+}
+
 
 
 #road-posts{
@@ -477,16 +482,11 @@ $animations-duration: 15s;
     transform:translateY(-100%);
 }
 
-@media (orientation: portrait){
-        #sign-wrapper{
-            margin-right: 0;
-            right: 50%;
-            transform: translateX(50%);
-        }
-}
+
 
 .navbar-menu{
     display: flex;
+    font-family: "Roboto", "Arial";
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
@@ -499,10 +499,18 @@ $animations-duration: 15s;
     padding:10px;
     color: $text-color;
     text-decoration:none;
+    align-items: center;
+    display: flex;
+}
+
+.navbar-menu a:hover{
+    transition: 0.3s;
+    padding:10px;
+    color: $text-hover-color;
 }
 
 .navbar-logo-wrap{
-    flex-grow:1;
+    flex-grow:5;
     display:flex;
 }
 .navbar-item-wrap{
@@ -515,4 +523,173 @@ $animations-duration: 15s;
 }
 .navbar-item{
 flex-grow:0;
+}
+
+.master-layout #road{
+    height: 50vh;
+    position: relative;
+    bottom:0;
+    background-size: calc((540px * 0.935) * 0.74) 46.75vh;
+    background-position: 0px 0px;
+    animation: animatedBackground linear infinite;
+    animation-duration: 5s;
+}
+
+.master-layout.autoservisas #road{
+    animation:none;
+}
+
+.master-layout #car,.master-layout #van,.master-layout #truck{
+    bottom: 23%;
+    position: absolute;
+    width: auto;
+    right: 10%;
+    left:initial;
+    transform: translateX(0);
+    transform-origin:center;
+    animation:none;
+}
+
+.master-layout #car{
+    bottom: 36%;
+    right: calc(10.5vh + 10.5vw);
+}
+
+.master-layout #car .car-wheels{
+    animation:none;
+    visibility:visible;
+}
+
+
+
+
+@media (orientation: portrait){
+        #sign-wrapper{
+            margin-right: 0;
+            right: 50%;
+            transform: translateX(50%);
+        }
+}
+
+section:nth-of-type(2){
+    margin-top:50px;
+    color: #333;
+}
+
+.content-card-wrapper{
+    text-align: center;
+}
+.left{
+    text-align:left;
+}
+.card{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.card li{
+    text-align:left;
+}
+
+.card .card-icon{
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+    align-items:flex-start;
+    margin-top:24px;
+}
+.card .card-icon img{
+    height:64px;
+    width:64px;
+}
+
+.card-text{
+    text-align:left;
+    flex-grow:1;
+}
+.card-content{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.card-table{
+        flex-grow:2;
+}
+.card-head-row,.card-table-row {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;   
+}
+.card-head-row >div,.card-table-row >div{
+    flex-grow:1;
+    flex-basis: 0;
+}
+.card-table-row{
+    line-height:64px;
+}
+
+.section-header{
+    text-align:center;
+}
+section {
+    padding-bottom:5vh;
+    margin-bottom:5vh;
+}
+section:nth-of-type(even){
+    border-bottom:1px solid #e8e8e8;
+}
+
+//map style
+ #techninepagalbakelyje {
+        height:300px;
+        width:360px;
+        margin: auto;
+        max-width:100%;
+    }
+    .gm-style-iw * {
+        display: block;
+        width: 100%;
+    }
+    .gm-style-iw h4, .gm-style-iw p {
+        margin: 0;
+        padding: 0;
+    }
+    .gm-style-iw a {
+        color: #4272db;
+    }
+//map stype end
+
+.site-footer, .footer-col{
+    padding-bottom:0px;
+    margin-bottom: 0px;
+}
+
+#garage{
+    height: 50%;
+    position: absolute;
+    right: 10%;
+    bottom: 28%;
+}
+
+#garage img{
+    height:100%;
+}
+.mobile {
+    display:none;
+}
+
+@media (max-width:670px){
+    .desktop{
+        display:none;
+    }
+    .mobile {
+    display:flex;
+    flex-direction: column;
+    }
+}
+@media (max-width:438px){
+    .card .card-icon{
+        margin-top:48px;
+    }
 }

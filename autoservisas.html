@@ -1,0 +1,87 @@
+---
+layout: master
+title: Autoservisas
+---
+<section class="master-layout autoservisas">
+    <div id="road">
+        <div id="garage">
+            <img src="/img/Garage.png">
+        </div>
+    </div>
+</section>
+<section class="container-fluid" style="border-bottom:none;">
+    <div class="container content-card-wrapper">
+    <div class='row'>
+        <div><h1>Autoservisas</h1></div>
+        <div class="col-lg-4 col-lg-offset-2 card"> 
+            <h3>Teikiamos paslaugos</h3>
+            <ul>
+                <li>Krapštome Variklius</li>
+                <li>Keičiame Ratus</li>
+            </ul>
+            <div class="card left">
+                <p>Kontaktinis Telefonas:<br> <b>+370 608 51117</b></p>
+                <p>Adresas:<br> <b>Nepriklausomybės g. 47, Vilkaviškis</b></p>
+            </div>
+        </div>
+        <div class="col-lg-6 card"> 
+            <h3>Apsilankykite mūsų autoservise!</h3>
+            <div id='techninepagalbakelyje'></div>
+
+    </div>
+    </div>
+</div>
+</section>
+<script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
+<script> 
+  google.maps.event.addDomListener(window, 'load', init);
+    var map;
+    function init() {
+        var mapOptions = {
+            center: new google.maps.LatLng(54.649331,23.024625),
+            zoom: 14,
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.DEFAULT,
+            },
+            disableDoubleClickZoom: true,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            },
+            scaleControl: true,
+            scrollwheel: true,
+            panControl: true,
+            streetViewControl: true,
+            draggable : true,
+            overviewMapControl: true,
+            overviewMapControlOptions: {
+                opened: false,
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+        }
+        var mapElement = document.getElementById('techninepagalbakelyje');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var locations = [
+['Arneva', 'undefined', 'undefined', 'undefined', 'undefined', 54.65098664338442, 23.024700211639356, 'https://mapbuildr.com/assets/img/markers/default.png']
+        ];
+        for (i = 0; i < locations.length; i++) {
+			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+			if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+			if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+            marker = new google.maps.Marker({
+                icon: markericon,
+                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                map: map,
+                title: locations[i][0],
+                desc: description,
+                tel: telephone,
+                email: email,
+                web: web
+            });
+link = '';     }
+
+}
+</script>

@@ -1,37 +1,37 @@
-  <!--
-    <nav class="site-nav">
-      <a href="#" class="menu-icon"> </a>
-
-      <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="active" href="{{ /kroviniupervezimas | prepend: site.baseurl }}">Krovinių Pervežimas</a>
-          <a class="" href="{{ /techninepagalbakelyje | prepend: site.baseurl }}">Techninė Pagalba Kelyje</a>
-          <a class="" href="{{ /autoservisas | prepend: site.baseurl }}">Autoservisas</a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </nav>
-    -->
-
-  <nav class="navbar-menu">
+  <nav class="navbar-menu desktop">
           <div class='navbar-logo-wrap'>
               <a class="navbar-logo" href="/">
                 <img src="img/Arneva50.png"/>
               </a>
           </div>
           <div class='navbar-item-wrap'>
-              <a class="navbar-item" href="//">
+              <a class="navbar-item" href="/kroviniupervezimas">
                   <div>Krovinių Pervežimas</div>
               </a>
-              <a class="navbar-item" href="//">
+              <a class="navbar-item" href="/techninepagalbakelyje">
                   <div>Techninė Pagalba</div>
               </a>
-              <a class="navbar-item" href="/pagalba/">
+              <a class="navbar-item" href="/autoservisas">
                   <div>Autoservisas</div>
               </a>
-              <a class="navbar-item" href="/svarbu/">
-                  <div>Kontaktai</div>
+          </div>
+  </nav>
+  
+    <nav class="navbar-menu mobile">
+          <div class='navbar-logo-wrap'>
+              <a class="navbar-logo" href="/">
+                <img src="img/Arneva50.png"/>
+              </a>
+          </div>
+          <div class='navbar-item-wrap'>
+              <a class="navbar-item" href="/kroviniupervezimas">
+                  <div>Krovinių Pervežimas</div>
+              </a>
+              <a class="navbar-item" href="/techninepagalbakelyje">
+                  <div>Techninė Pagalba</div>
+              </a>
+              <a class="navbar-item" href="/autoservisas">
+                  <div>Autoservisas</div>
               </a>
           </div>
   </nav>
